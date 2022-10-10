@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <link type="text/css" rel="stylesheet"
+    href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=6310a6ad592c72439615db25" />
+  <link type="text/css" rel="stylesheet"
+    href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.36311" />
+  <link type="text/css" rel="stylesheet"
+    href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.36311" />
+    <style>
+        input[type=text]{
+            border-radius: 5px;
+            padding: 7px;
+            margin: 8px 0px;
+            width: 200px;
+        }
+        input[type=number]{
+            border-radius: 5px;
+            padding: 7px;
+            margin: 8px 0px;
+            width: 200px;
+        }
+        label{
+            text-align: right;
+        }
+        input:hover{
+            border: 1px solid rgb(48, 146, 226)
+        }
+        input:focus{
+            border: 1px solid rgb(48, 146, 226)
+        }
+        select{
+            padding: 7px;
+            margin: 8px 0px;
+            border-radius: 5px;
+            width: 200px;
+        }
+        select::selection{
+            border: 2px solid rgb(48, 146, 226);
+            box-shadow: 1px 2px 2px rgb(48, 146, 226);
+        }
+        select:focus{
+            border: 2px solid rgb(48, 146, 226)
+        }
+        table {
+                border-collapse: collapse;
+                width: 100%;
+        }
+        tr{
+            width: 150px;
+            text-align: center;
+            padding: 9px;
+            position: relative;
+            margin: 10px;
+        }
+        tr:hover{
+            background: rgba(2, 188, 245, 0.225);
+        }
+        tbody{
+            width: 100%;
+        }
+        input[type=submit]{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reservas</h1>
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    <fieldset>
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Reservar" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" />
+    </fieldset>
+</form>
+    
+</body>
+</html>
+

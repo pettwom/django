@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.36304" type="text/javascript"></script>
+    <script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.36304" type="text/javascript"></script>
+    <script src="https://cdn01.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.36304" type="text/javascript"></script>
+    <script defer src="https://cdn02.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.36304"
+        type="text/javascript"></script>
+    <script defer src="https://cdn03.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.36304"
+        type="text/javascript"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/defaultV2.css?" />
+
+    <form class="" action="{% url 'cliente_form' %}" method="post" name="form_cliente" id="form_cliente" accept-charset="utf-8" autocomplete="on">
+        {% csrf_token %}
+        <div role="main" class="form-all">
+            <ul class="form-section page-section">
+                <li id="cid_1" class="form-input-wide" data-type="control_head">
+                    <div class="form-header-group  header-large">
+                        <div class="header-text httal htvam">
+                            <h1 id="header_1" class="form-header" data-component="header">
+                                Clientes
+                            </h1>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line jf-required" data-type="control_fullname" id="id_3">
+                    <label class="form-label form-label-top form-label-extended form-label-auto" id="label_3"
+                        for="first_3">
+                        Nombre
+                        <span class="form-required">
+                            *
+                        </span>
+                    </label>
+                    <div id="cid_3" class="form-input-wide jf-required" data-layout="full">
+                        <div data-wrapper-react="true" class="extended">
+                            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                <input type="text" id="nombreCliente" name="nombreCliente"
+                                    class="form-textbox validate[required]" data-defaultvalue=""
+                                    autoComplete="section-input_3 given-name" size="10" value="" data-component="first"
+                                    aria-labelledby="label_3 sublabel_3_first" required="" />
+                                <label class="form-sub-label" for="first_3" id="sublabel_3_first"
+                                    style="min-height:13px" aria-hidden="false"> Nombre </label>
+                            </span>
+                            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle">
+                                <input type="text" id="paternoCliente" name="paternoCliente" class="form-textbox"
+                                    data-defaultvalue="" autoComplete="section-input_3 additional-name" size="10"
+                                    value="" data-component="middle" aria-labelledby="label_3 sublabel_3_middle"
+                                    required="" />
+                                <label class="form-sub-label" for="middle_3" id="sublabel_3_middle"
+                                    style="min-height:13px" aria-hidden="false"> Paterno </label>
+                            </span>
+                            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                                <input type="text" id="maternoCliente" name="maternoCliente" class="form-textbox" 
+                                    data-defaultvalue="" autoComplete="section-input_3 additional-name" size="15" value="" data-component="last"
+                                    aria-labelledby="label_3 sublabel_3_last" required="" />
+                                <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px"
+                                    aria-hidden="false"> Materno </label>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+                    <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4">
+                        Carnet de Identidad
+                        <span class="form-required">
+                            *
+                        </span>
+                    </label>
+                    <div id="cid_4" class="form-input-wide jf-required" data-layout="half">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                            <input type="text" id="ciCliente" name="ciCliente" data-type="input-textbox"
+                                class="form-textbox validate[required]" data-defaultvalue="" style="width:310px"
+                                size="310" value="" data-component="textbox" aria-labelledby="label_4 sublabel_input_4"
+                                required="" />
+                            <label class="form-sub-label" for="input_4" id="sublabel_input_4" style="min-height:13px"
+                                aria-hidden="false"> colocar C.I. sin complemento </label>
+                        </span>
+                    </div>
+                </li>
+                <li class="form-line jf-required" data-type="control_phone" id="id_5">
+                    <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5_full">
+                        Número de teléfono
+                        <span class="form-required">
+                            *
+                        </span>
+                    </label>
+                    <div id="cid_5" class="form-input-wide jf-required" data-layout="half">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                            <input type="tel" id="fonoCliente" name="fonoCliente" data-type="mask-number"
+                                class="mask-phone-number form-textbox validate[required, Fill Mask]"
+                                data-defaultvalue="" autoComplete="section-input_5 tel-national" style="width:310px"
+                                data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone"
+                                aria-labelledby="label_5 sublabel_5_masked" required="" />
+                            <label class="form-sub-label" for="input_5_full" id="sublabel_5_masked"
+                                style="min-height:13px" aria-hidden="false"> Favor ingrese un número de teléfono válido.
+                            </label>
+                        </span>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_email" id="id_6">
+                    <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6"> Correo
+                        Electrónico </label>
+                    <div id="cid_6" class="form-input-wide" data-layout="half">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                            <input type="email" id="emailCliente" name="emailCliente"
+                                class="form-textbox validate[Email, disallowFree]" data-defaultvalue=""
+                                style="width:310px" size="310" value="" data-component="email"
+                                aria-labelledby="label_6 sublabel_input_6" />
+                            <label class="form-sub-label" for="input_6" id="sublabel_input_6" style="min-height:13px"
+                                aria-hidden="false"> ejemplo@ejemplo.com </label>
+                        </span>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_button" id="id_2">
+                    <div id="cid_2" class="form-input-wide" data-layout="full">
+                        <div data-align="auto"
+                            class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                            <button id="input_2" type="submit"
+                                class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+                                data-component="button" data-content="">
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li style="display:none">
+                    Should be Empty:
+                    <input type="text" name="website" value="" />
+                </li>
+            </ul>
+        </div>
+    </form>
+</body>
+
+</html>
